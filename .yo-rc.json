@@ -1,0 +1,8 @@
+{
+  "generator-jhipster": {
+    "baseName": "socialquiz",
+    "packageName": "com.gdm.socialquiz",
+    "packageFolder": "com/gdm/socialquiz",
+    "hibernateCache": "ehcache"
+  }
+}

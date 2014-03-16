@@ -1,0 +1,73 @@
+<div>
+
+    <h2>Statements</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveStatementModal">
+        <span class="glyphicon glyphicon-flash"></span> Create a new Statement
+    </button>
+    <div class="modal fade" id="saveStatementModal" tabindex="-1" role="dialog" aria-labelledby="myStatementLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myStatementLabel">Créer un énoncé de question</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="statement.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Enoncé de la question</label>
+                            <input type="text" class="form-control" name="text"
+                                   ng-model="statement.text" ng-minlength=1 ng-maxlength=1000 required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">Annuler
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+      <br /><br />
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Enoncé</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="statement in statements">
+                    <td>{{statement.id}}</td>
+                    <td>{{statement.text}}</td>
+                    <td>
+                        <button type="submit"
+                                ng-click="update(statement.id)"
+                                class="btn">
+                            <span class="glyphicon glyphicon-pencil"></span> Modifier
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(statement.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span> Supprimer
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

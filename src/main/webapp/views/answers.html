@@ -1,0 +1,95 @@
+<div>
+
+    <h2>Answers</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveAnswerModal">
+        <span class="glyphicon glyphicon-flash"></span> Créer une réponse à une question
+    </button>
+    <div class="modal fade" id="saveAnswerModal" tabindex="-1" role="dialog" aria-labelledby="myAnswerLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myAnswerLabel">Créer ou modifier une réponse</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="answer.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nom de la solution</label>
+                            <input type="text" class="form-control" name="title"
+                                   ng-model="answer.title" ng-minlength=1 ng-maxlength=500 required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Votre réponse est une date?</label>
+                            <input type="date" class="form-control" name="date"
+                                   ng-model="answer.date">
+                        </div>
+                        <div class="form-group">
+                            <label>Solution</label>
+                            <input type="text" class="form-control" name="solution"
+                                   ng-model="answer.solution" ng-minlength=1 ng-maxlength=100>
+                        </div>
+                        <div class="form-group">
+                            <label>Ajouter des compléments d'informations à la solution?</label>
+                            <input type="text" class="form-control" name="complement"
+                                   ng-model="answer.complement" ng-minlength=1 ng-maxlength=1000>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">Cancel
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+                       <br />
+                       <br />
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titre</th>
+                    <th>Solution Date</th>
+                    <th>Solution</th>
+                    <th>Compléments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="answer in answers">
+                    <td>{{answer.id}}</td>
+                    <td>{{answer.title}}</td>
+                    <td>{{answer.date}}</td>
+                    <td>{{answer.solution}}</td>
+                    <td>{{answer.complement}}</td>
+                    <td>
+                        <button type="submit"
+                                ng-click="update(answer.id)"
+                                class="btn">
+                            <span class="glyphicon glyphicon-pencil"></span> Edit
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(answer.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span> Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
