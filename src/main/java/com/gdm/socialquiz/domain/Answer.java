@@ -1,5 +1,6 @@
 package com.gdm.socialquiz.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.joda.deser.LocalDateDeserializer;
@@ -35,6 +36,7 @@ public class Answer implements Serializable {
     @JsonSerialize(using = CustomLocalDateSerializer.class)
     private LocalDate date;
 
+    @JsonIgnore
     @ManyToOne
     private Question question;
 

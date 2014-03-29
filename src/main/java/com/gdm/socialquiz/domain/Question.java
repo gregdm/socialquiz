@@ -31,8 +31,7 @@ public class Question implements Serializable {
     @OneToOne
     private Statement statement;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Answer> answer;
 
@@ -45,8 +44,8 @@ public class Question implements Serializable {
     @ManyToOne
     private User author;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "question")
+    //Tjs en EAGER c'est bien? Peut être dois-je faire une requet avec un join qui le fasse
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Vote> vote;
 

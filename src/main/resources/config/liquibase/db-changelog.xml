@@ -353,4 +353,17 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="36" author="jhipster">
+        <dropForeignKeyConstraint
+                baseTableName="T_QUESTION"
+                constraintName="fk_question_answer"/>
+    </changeSet>
+
+    <changeSet id="37" author="jhipster">
+        <dropColumn columnName="answer_id"
+                    tableName="T_QUESTION"/>
+    </changeSet>
+
+
+
 </databaseChangeLog>

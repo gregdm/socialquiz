@@ -1,5 +1,6 @@
 package com.gdm.socialquiz.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.joda.deser.LocalDateDeserializer;
@@ -31,6 +32,7 @@ public class Vote implements Serializable {
 
     private Boolean up;
 
+    @JsonIgnore
     @ManyToOne
     private Question question;
 

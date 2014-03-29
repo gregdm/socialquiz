@@ -72,10 +72,18 @@
             <tbody>
                 <tr ng-repeat="question in questions">
                     <td>{{question.statement.text}}</td>
-                    <td></td>
+                    <td>
+                        <li ng-repeat="answer in question.answer">
+                            <span>{{answer.id}} - {{answer.title}}</span>
+                        </li>
+                    </td>
                     <td>{{question.category.name}}</td>
                     <td>{{question.hint}}</td>
-                    <td></td>
+                    <td>
+                        <li ng-repeat="vote in question.vote">
+                            <span>{{vote.id}} - {{vote.difficulty}}</span>
+                        </li>
+                    </td>
                     <td>{{question.author.login}}</td>
                     <td>
                         <button type="submit"
