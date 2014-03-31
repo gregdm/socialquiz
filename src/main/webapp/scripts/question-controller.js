@@ -27,6 +27,6 @@ socialquizApp.controller('QuestionController', ['$scope', 'resolvedQuestion', 'Q
         };
 
         $scope.clear = function () {
-            $scope.question = {id: "", statement: "", answer: "", category: "", hint: "", vote: ""};
+            $scope.question = {id: "", hint: ""};
         };
     }]);

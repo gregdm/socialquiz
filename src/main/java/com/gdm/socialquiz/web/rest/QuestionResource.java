@@ -2,7 +2,9 @@ package com.gdm.socialquiz.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.gdm.socialquiz.domain.Question;
+import com.gdm.socialquiz.domain.Statement;
 import com.gdm.socialquiz.repository.QuestionRepository;
+import com.gdm.socialquiz.repository.StatementRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +25,9 @@ public class QuestionResource {
     @Inject
     private QuestionRepository questionRepository;
 
+    @Inject
+    private StatementRepository statementRepository;
+
     /**
      * POST  /rest/questions -> Create a new question.
      */
@@ -32,6 +37,8 @@ public class QuestionResource {
     @Timed
     public void create(@RequestBody Question question) {
         log.debug("REST request to save Question : {}", question);
+        //A regarder, mettre en mode debug regarder le parcours du statement
+        question.setStatement(statementRepository.saveAndFlush(question.getStatement()));
         questionRepository.save(question);
     }
 
