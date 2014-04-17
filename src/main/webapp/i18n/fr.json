@@ -4,6 +4,9 @@
         "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/\">mettre à jour votre navigateur</a> pour une meilleure expérience.",
         "menu": {
             "home": "Accueil",
+            "random" : "Hazard",
+            "category" : "Catégories",
+            "contribute" : "Participer",
             "account": {
                 "main": "Compte",
                 "settings": "Profil",
@@ -29,20 +32,20 @@
         "title": "index"
     },
     "main": {
-        "title": "Bienvenue, Java Hipster !",
-        "subtitle": "Ceci est votre page d'accueil",
+        "title": "SocialQuiz !",
+        "subtitle": "Vous pouvez commencer",
         "logged": {
-            "message": "Vous êtes connecté en tant que \"{{username}}\".",
+            "message": "Bienvenue {{username}}!",
             "authenticated": "Si vous voulez vous <a href=\"#/login\">connecter</a>, vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=\"admin\" et mot de passe =\"admin\") <br/> - Utilisateur (nom d'utilisateur=\"user\" et mot de passe =\"user\")."
         },
-        "question": "Si vous avez des questions à propos de JHipster:",
+        "question": "Si vous avez des questions à propos de SocialQuiz:",
         "link": {
-            "homepage": "Page d'accueil de JHipster",
-            "stackoverflow": "JHipster sur Stack Overflow",
-            "bugtracker": "JHipster bug tracker",
-            "contact": "Contactez-nous sur Twitter @java_hipster"
+            "homepage": "Page d'accueil",
+            "stackoverflow": "Stack Overflow",
+            "bugtracker": "Bug tracker",
+            "contact": "Contactez-nous sur Twitter"
         },
-        "like": "Si vous aimez JHipster, donnez nous une étoile sur",
+        "like": "Si vous aimez SocialQuiz, parlez-en",
         "github": "Github"
     },
     "login": {

@@ -223,7 +223,7 @@
                       tableName="T_QUESTION"/>
     </changeSet>
 
-   <!-- <changeSet id="15" author="jhipster">
+   <changeSet id="15" author="jhipster">
         <createTable tableName="T_STATEMENT">
             <column name="id" type="varchar(255)">
                 <constraints primaryKey="true" nullable="false"/>
@@ -235,6 +235,9 @@
         <addColumn tableName="T_ANSWER">
             <column name="title" type="varchar(500)"/>
         </addColumn>
+    </changeSet>
+
+    <changeSet id="16" author="jhipster">
         <addColumn tableName="T_ANSWER">
             <column name="solution" type="varchar(100)"/>
         </addColumn>
@@ -247,7 +250,8 @@
         <addColumn tableName="T_ANSWER">
             <column name="id_question" type="varchar(255)"/>
         </addColumn>
-    </changeSet>              -->
+    </changeSet>
+
     <changeSet id="17" author="jhipster">
         <dropColumn columnName="id_question"
                     tableName="T_ANSWER"/>

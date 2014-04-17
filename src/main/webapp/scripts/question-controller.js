@@ -4,11 +4,14 @@ socialquizApp.controller('QuestionController', ['$scope', 'resolvedQuestion', 'Q
     function ($scope, resolvedQuestion, Question) {
 
         $scope.questions = resolvedQuestion;
+        //$scope.categories = resolvedQuestion;
 
         $scope.create = function () {
             Question.save($scope.question,
                 function () {
                     $scope.questions = Question.query();
+                   // $scope.categories = Question.query();
+
                     $('#saveQuestionModal').modal('hide');
                     $scope.clear();
                 });

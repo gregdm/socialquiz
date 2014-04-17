@@ -10,7 +10,7 @@ spring:
         databaseName: socialquiz
         serverName: socialquiz
         username: root
-        password: admin
+        password:
 
     jpa:
         database-platform: org.hibernate.dialect.MySQLInnoDBDialect
